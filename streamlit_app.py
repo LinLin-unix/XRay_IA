@@ -42,10 +42,10 @@ def download_and_extract_model():
 modelo_path = download_and_extract_model()
 
 # Verificar si el archivo del modelo existe
-if not modelo_path or not os.path.exists(modelo_path):
-    st.error("No se encontró el archivo del modelo.")
-else:
-    st.success("Archivo del modelo encontrado.")
+#if not modelo_path or not os.path.exists(modelo_path):
+#    st.error("No se encontró el archivo del modelo.")
+#else:
+#    st.success("Archivo del modelo encontrado.")
 
 # Definir el modelo base InceptionV3
 base_model = InceptionV3(weights=None, include_top=False, input_shape=(150, 150, 3))
@@ -60,11 +60,11 @@ predictions = Dense(1, activation='sigmoid')(x)
 model = Model(inputs=base_model.input, outputs=predictions)
 
 # Cargar los pesos del modelo desde el archivo .keras
-try:
-    model.load_weights(modelo_path)
-    st.success("Pesos del modelo cargados correctamente.")
-except Exception as e:
-    st.error(f"Error al cargar los pesos del modelo: {e}")
+#try:
+#    model.load_weights(modelo_path)
+#    st.success("Pesos del modelo cargados correctamente.")
+#except Exception as e:
+#    st.error(f"Error al cargar los pesos del modelo: {e}")
 
 # Verificación de carga de archivo
 st.markdown("### ¡Sube una imagen de rayos X!")
